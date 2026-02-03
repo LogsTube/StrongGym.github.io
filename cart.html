@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strong Gym | Carrito</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&family=Teko:wght@500;700&display=swap"
+        rel="stylesheet">
+    <script src="script.js" defer></script>
+    <style>
+        .page-header {
+            padding-top: 150px;
+            padding-bottom: 50px;
+            background: linear-gradient(to bottom, #000, #111);
+            text-align: center;
+        }
+
+        .cart-container {
+            max-width: 900px;
+            margin: 0 auto;
+            min-height: 50vh;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            background: #111;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            background: #000;
+            padding: 5px;
+            border-radius: 4px;
+            margin-right: 20px;
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-details h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .item-price {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .item-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-right: 30px;
+        }
+
+        .item-actions button {
+            background: #222;
+            border: 1px solid #333;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .item-actions button:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .item-subtotal {
+            font-size: 1.2rem;
+            font-weight: bold;
+            min-width: 80px;
+            text-align: right;
+        }
+
+        .cart-summary {
+            background: #111;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px solid var(--primary);
+        }
+
+        .total-label {
+            font-size: 1.5rem;
+            font-family: var(--font-heading);
+        }
+
+        .total-amount {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-left: 20px;
+        }
+
+        .checkout-btn {
+            background: var(--primary);
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .checkout-btn:hover {
+            box-shadow: 0 0 20px var(--primary-glow);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .cart-item {
+                flex-wrap: wrap;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .item-details {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .item-actions {
+                margin: 0;
+                margin-bottom: 15px;
+            }
+
+            .cart-summary {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">STRONG <span class="accent">GYM</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#categories">Productos</a></li>
+                    <li><a href="admin.html">Mi Cuenta</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html" class="btn btn-outline">Carrito (0)</a>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>TU <span class="accent">CARRITO</span></h1>
+            <p style="color: var(--text-muted);">Estás a un paso de tu mejor versión.</p>
+        </div>
+    </div>
+
+    <section class="section-padding">
+        <div class="container cart-container">
+            <div id="cart-items">
+                <!-- Injected via JS -->
+            </div>
+
+            <div class="cart-summary">
+                <div style="display: flex; align-items: center;">
+                    <span class="total-label">TOTAL:</span>
+                    <span id="cart-total" class="total-amount">$0</span>
+                </div>
+                <a href="checkout.html" class="checkout-btn">PROCEDER AL PAGO &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="section-padding">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <a href="index.html" class="logo footer-logo">STRONG <span class="accent">GYM</span></a>
+                <p>Tu socio en el camino hacia la grandeza física.</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Strong Gym. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
